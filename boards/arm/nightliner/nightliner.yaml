@@ -1,0 +1,16 @@
+identifier: nightliner
+name: nightliner
+type: keyboard
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - counter
+  - usb_device
+  - nvs
+  - can
+  - kscan
+  - ble

@@ -1,0 +1,12 @@
+#
+# Copyright (c) 2023 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+#
+
+config BOARD_NIGHTLINER_LEFT
+    bool "nightliner_left"
+    depends on SOC_NRF52840_QIAA
+
+config BOARD_NIGHTLINER_RIGHT
+    bool "nightliner_right"
+    depends on SOC_NRF52840_QIAA

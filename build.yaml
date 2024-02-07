@@ -17,6 +17,9 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
+# include:
+#   - board: corneish_zen_v2_left
+#   - board: corneish_zen_v2_right
 include:
-  - board: corneish_zen_v2_left
-  - board: corneish_zen_v2_right
+  - board: nightliner_left
+  - board: nightliner_right

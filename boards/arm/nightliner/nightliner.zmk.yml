@@ -1,0 +1,14 @@
+file_format: '1'
+id: nightliner
+name: nightliner
+type: board
+url: https://michaelrommel.com/create/2024-02-01_nightliner
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+siblings:
+  - nightliner_left
+  - nightliner_right
