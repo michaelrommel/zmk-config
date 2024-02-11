@@ -54,5 +54,5 @@ jobs:
           # So the previous commit is amended instead of creating a new one when desired
           commit_message: '{{ steps.last_commit_message.outputs.msg }}'
           commit_options: '--amend --no-edit'
-          push_options: "--force-with-lease'"
+          push_options: '--force-with-lease'
           skip_fetch: true
