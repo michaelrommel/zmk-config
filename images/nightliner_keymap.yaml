@@ -1,0 +1,127 @@
+layers:
+  default:
+  - {t: ESC, s: '!'}
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - TAB
+  - {t: A, h: LSHIFT}
+  - {t: S, h: LGUI}
+  - {t: D, h: LALT}
+  - {t: F, h: LCTRL}
+  - G
+  - H
+  - {t: J, h: RCTRL}
+  - {t: K, h: RALT}
+  - {t: L, h: RGUI}
+  - {t: ;, h: RSHIFT, s: ':'}
+  - {t: '''', s: '"'}
+  - Z
+  - S
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - {t: '-', s: _}
+  - SPACE
+  - code
+  - code
+  - RETURN
+  - ''
+  code:
+  - KP SLASH
+  - {t: '=', s: +}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - '{'
+  - '}'
+  - PG UP
+  - (
+  - )
+  - DEL
+  - KP ASTERISK
+  - {t: '-', s: _}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: ',', s: <}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: \, s: '|'}
+  - ''
+  - {t: '`', s: '~'}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: ., s: '>'}
+  - '['
+  - ']'
+  - PG DN
+  - ''
+  - ''
+  - ''
+  - SPACE
+  - {h: code, type: held}
+  - {h: code, type: held}
+  - RETURN
+  - ''
+  misc:
+  - BT CLR
+  - {t: BT, h: '0', s: '$$mdi:bluetooth-connect$$'}
+  - {t: BT, h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {t: BT, h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {t: BT, h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {t: BT, h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '6', s: ^}
+  - ''
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {type: held}
+combos:
+- p: [38, 39]
+  k: misc

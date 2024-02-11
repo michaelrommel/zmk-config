@@ -1,0 +1,94 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define CODE    1
+#define MISC    2
+
+/ {
+	combos {
+		compatible = "zmk,combos";
+		combo_misc {
+			timeout-ms = <50>;
+			key-positions = <38 39>;
+			bindings = <&mo MISC>;
+		};
+	};
+
+	behaviors {
+		tdc: tap_dance_comma {
+			compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&kp DOT>, <&kp COMMA>;
+		};
+	
+        lh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 13 14 15 16 18 19 20 21 22 23 29 30 31 32 33 36 37 38 39>;
+        };
+
+        rh_pht: right_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 19 20 21 22 24 25 26 27 28 34 35 36 37>;
+        };
+
+        // uht: umlaut_hold_tap {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     #binding-cells = <2>;
+        //     flavor = "tap-preferred";
+        //     tapping-term-ms = <200>;
+        //     quick-tap-ms = <200>;
+        //     bindings = <&kp>, <&kp>;
+        // };
+
+		exclesc: exclamationmark_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp EXCL>;
+            mods = <(MOD_RGUI|MOD_RSFT)>;
+        };
+	};
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &exclesc         &kp Q            &kp W            &kp E            &kp R            &kp T                    &kp Y            &kp U            &kp I            &kp O            &kp P                &kp BSPC
+                &kp TAB          &lh_pht LSHIFT A &lh_pht LGUI S   &lh_pht LALT D   &lh_pht LCTRL F  &kp G                    &kp H            &rh_pht RCTRL J  &rh_pht RALT K   &rh_pht RGUI L   &rh_pht RSHIFT SEMI  &kp SQT
+                                 &kp Z            &kp S            &kp C            &kp V            &kp B                    &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH
+                                                                   &kp MINUS        &kp SPACE        &mo CODE                 &mo CODE         &kp RETURN       &none     
+            >;
+        };
+
+        code_layer {
+            bindings = <
+                &kp KP_SLASH     &kp EQUAL        &kp N7           &kp N8           &kp N9           &kp N0                   &kp LBRC         &kp RBRC         &kp PG_UP        &kp LPAR         &kp RPAR             &kp DEL
+                &kp KP_ASTERISK  &kp MINUS        &kp N4           &kp N5           &kp N6           &kp COMMA                &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp BSLH             &none
+                                 &kp GRAVE        &kp N1           &kp N2           &kp N3           &kp DOT                  &kp LBKT         &kp RBKT         &kp PG_DN        &none            &none     
+                                                                   &none            &kp SPACE        &none                    &none            &kp RETURN       &none     
+            >;
+        };
+
+        misc_layer {
+            bindings = <
+                &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL       2 &bt BT_SEL 3   &bt BT_SEL 4             &none            &none            &none            &none            &none                &none
+                &kp N6           &none            &kp F4           &kp F5           &kp F6           &none                    &none            &none            &none            &none            &none                &none
+                                 &none            &kp F1           &kp F2           &kp F3           &none                    &none            &none            &none            &none            &none   
+                                                                   &none            &none            &none                    &none            &none            &none
+            >;
+        };
+    };
+};
