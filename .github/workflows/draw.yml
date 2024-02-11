@@ -29,6 +29,7 @@ jobs:
       amend_commit: true # whether to amend the commit or create a new one
       install_branch: 'main' # branch to install keymap-drawer from
   convert:
+    needs: draw
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
