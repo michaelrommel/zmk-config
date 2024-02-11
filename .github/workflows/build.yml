@@ -1,5 +1,13 @@
 on: [push, pull_request, workflow_dispatch]
-
+  push:
+    paths:
+      - "build.yaml"
+      - "config/west.yml"
+      - "config/boards/arm/nightliner/*.keymap"
+      - "config/boards/arm/nightliner/*.dtsi"
+      - "config/boards/arm/nightliner/*.defconfig"
+      - "config/boards/arm/nightliner/*.dts"
+      - "config/boards/arm/nightliner/*.conf"
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
