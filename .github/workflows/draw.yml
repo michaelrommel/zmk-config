@@ -23,7 +23,7 @@ jobs:
       keymap_patterns: 'config/boards/arm/nightliner/*.keymap' # path to the keymaps to parse
       config_path: 'images/keymap_drawer.config.yaml' # config file, ignored if not exists
       output_folder: 'images' # path to save produced SVGs
-      parse_args: "nightliner:'-b nightliner_prev.yaml'"
+      parse_args: "nightliner:'-b images/nightliner_prev.yaml'"
       # draw_args: "nightliner:-j nightliner.json"
       # commit_message: "Keymap SVG creation"
       amend_commit: true # whether to amend the commit or create a new one
