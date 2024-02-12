@@ -14,7 +14,7 @@ draw_config:
   outer_pad_w: 30.0
   outer_pad_h: 40.0
   line_spacing: 1.2
-  arc_radius: 6.0
+  arc_radius: 5.0
   append_colon_to_layer_header: true
   small_pad: 10.0
   legend_rel_x: 0.0
