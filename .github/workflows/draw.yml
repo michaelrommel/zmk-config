@@ -45,7 +45,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y inkscape
       - name: Convert svg to png
-        run: inkscape -d 300 -b "#282828" -o images/nightliner.png images/nightliner.svg
+        run: |
+          rm images/nightliner.png
+          inkscape -d 300 -b "#282828" -o images/nightliner2.png images/nightliner.svg
       - name: Get last commit message
         id: last_commit_message
         run: |
