@@ -30,6 +30,8 @@ jobs:
       install_branch: 'main' # branch to install keymap-drawer from
   convert:
     needs: draw
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
