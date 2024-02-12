@@ -117,10 +117,10 @@ layers:
   - ''
   - ''
   - ''
+  - SPACE
   - ''
   - ''
-  - ''
-  - {type: held}
+  - {t: RETURN, type: held}
   - {type: held}
 combos:
 - p: [38, 39]
