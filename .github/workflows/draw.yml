@@ -16,13 +16,14 @@ concurrency:
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    uses: michaelrommel/keymap-drawer/.github/workflows/draw-zmk.yml@jsonarg
     permissions:
       contents: write
     with:
       keymap_patterns: 'config/boards/arm/nightliner/*.keymap' # path to the keymaps to parse
       config_path: 'images/keymap_drawer.config.yaml' # config file, ignored if not exists
       output_folder: 'images' # path to save produced SVGs
+      json_path: 'images' # keymap layout file path
       parse_args: "nightliner:'-b images/nightliner_prev.yaml'"
       # draw_args: "nightliner:-j nightliner.json"
       # commit_message: "Keymap SVG creation"
