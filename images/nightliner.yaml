@@ -76,10 +76,10 @@ layers:
   - ''
   - ''
   - ''
-  - SPACE
+  - {t: ▽, type: trans}
   - {h: code, type: held}
   - {h: code, type: held}
-  - RETURN
+  - {t: ▽, type: trans}
   - ''
   misc:
   - BT CLR
@@ -117,10 +117,10 @@ layers:
   - ''
   - ''
   - ''
-  - SPACE
   - ''
   - ''
-  - {t: RETURN, type: held}
+  - ''
+  - {type: held}
   - {type: held}
 combos:
 - p: [38, 39]
