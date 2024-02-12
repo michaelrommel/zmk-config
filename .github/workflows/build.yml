@@ -1,3 +1,4 @@
+name: Build firmware
 on:
   workflow_dispatch:
   push:

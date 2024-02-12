@@ -1,5 +1,5 @@
 # Simple workflow for drawing the keymap and deploying static content to GitHub Pages
-name: Draw keymap
+name: Draw keymap images
 
 on:
   workflow_dispatch: # can be triggered manually
