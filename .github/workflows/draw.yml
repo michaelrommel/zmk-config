@@ -19,7 +19,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name svg
+      - name: svg
         uses: michaelrommel/keymap-drawer/.github/workflows/draw-zmk.yml@jsonarg
         with:
           keymap_patterns: 'config/boards/arm/nightliner/*.keymap' # path to the keymaps to parse
