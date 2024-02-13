@@ -16,30 +16,21 @@ concurrency:
 
 jobs:
   draw:
-    uses: michaelrommel/keymap-drawer/.github/workflows/draw-zmk.yml@jsonarg
     permissions:
       contents: write
-    with:
-      keymap_patterns: 'config/boards/arm/nightliner/*.keymap' # path to the keymaps to parse
-      config_path: 'images/keymap_drawer.config.yaml' # config file, ignored if not exists
-      output_folder: 'images' # path to save produced SVGs
-      json_path: 'images' # keymap layout file path
-      parse_args: "nightliner:'-b images/nightliner_prev.yaml'"
-      # draw_args: "nightliner:-j nightliner.json"
-      # commit_message: "Keymap SVG creation"
-      amend_commit: true # whether to amend the commit or create a new one
-      install_branch: 'main' # branch to install keymap-drawer from
-  convert:
-    needs: draw
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name svg
+        uses: michaelrommel/keymap-drawer/.github/workflows/draw-zmk.yml@jsonarg
         with:
-          # So the reference to the parent commit is available when amending
-          fetch-depth: 2
+          keymap_patterns: 'config/boards/arm/nightliner/*.keymap' # path to the keymaps to parse
+          config_path: 'images/keymap_drawer.config.yaml' # config file, ignored if not exists
+          output_folder: 'images' # path to save produced SVGs
+          json_path: 'images' # keymap layout file path
+          parse_args: "nightliner:'-b images/nightliner_prev.yaml'"
+          # draw_args: "nightliner:-j nightliner.json"
+          # commit_message: "Keymap SVG creation"
+          amend_commit: true # whether to amend the commit or create a new one
+          install_branch: 'main' # branch to install keymap-drawer from
       - name: Install inkscape
         run: |
           sudo add-apt-repository ppa:inkscape.dev/stable
