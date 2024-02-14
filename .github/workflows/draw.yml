@@ -30,6 +30,7 @@ jobs:
       amend_commit: true # whether to amend the commit or create a new one
       install_branch: 'main' # branch to install keymap-drawer from
       destination: 'artifact'
+      artifactname: 'keymap-drawings'
   convert:
     needs: draw
     permissions:
@@ -49,12 +50,12 @@ jobs:
       - name: Get artifacts
         uses: actions/download-artifact@v4
         with:
-          # name: ${{ needs.draw.outputs.drawings-id }}
-          name: 'drawings'
+          name: 'keymap-drawings'
           path: images
       - name: Convert svg to png
         run: |
-          ls -lR
+          echo 'The artifact had the id ${{ needs.draw.outputs.drawings-id }}'
+          ls -lR images
           inkscape -d 300 -b "#282828" -o images/nightliner.png images/nightliner.svg
       - name: Get last commit message
         id: last_commit_message
