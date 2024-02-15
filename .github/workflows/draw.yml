@@ -64,7 +64,7 @@ jobs:
       - name: Commit converted image
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: 'images/*.png'
+          file_pattern: 'images/*.yaml images/*.svg images/*.png'
           # So the previous commit is amended instead of creating a new one when desired
           commit_message: '${{ steps.last_commit_message.outputs.msg }}'
           commit_options: '--amend --no-edit'
