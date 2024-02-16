@@ -30,7 +30,7 @@ jobs:
       amend_commit: true # whether to amend the commit or create a new one
       install_branch: 'main' # branch to install keymap-drawer from
       destination: 'artifact'
-      artifactname: 'keymap-drawings'
+      artifact_name: 'keymap-drawings'
   convert:
     needs: draw
     permissions:
