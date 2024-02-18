@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   draw:
-    uses: michaelrommel/keymap-drawer/.github/workflows/draw-zmk.yml@artifactupload
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@artifactupload
     permissions:
       contents: write
     with:
@@ -56,7 +56,11 @@ jobs:
         run: |
           echo 'The artifact had the id ${{ needs.draw.outputs.drawings-id }}'
           ls -lR images
-          inkscape -d 300 -b "#282828" -o images/nightliner.png images/nightliner.svg
+          for svg in images/*.svg; do
+            keyboard=`/usr/bin/basename ${svg} .svg`
+            echo Processing ${keyboard}
+            inkscape -d 300 -b "#282828" -o images/${keyboard}.png images/${keyboard}.svg
+          done
       - name: Get last commit message
         id: last_commit_message
         run: |
